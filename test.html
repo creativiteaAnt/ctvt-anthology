@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.turnjs.com/lib/turn.min.js"></script>
+    <style type="text/css">
+        body{
+            overflow:hidden;
+        }
+
+        *{
+  
+            line-height: 25px;
+        }
+
+        #flipbook{
+            width:400px;
+            height:300px;
+        }
+
+        #flipbook .page{
+            width:100%;
+            height:50%;
+            background-color:white;
+            line-height:300px;
+            font-size:12px;
+            text-align:center;
+        }
+
+        #flipbook .page-wrapper{
+            -webkit-perspective:2000px;
+            -moz-perspective:2000px;
+            -ms-perspective:2000px;
+            -o-perspective:2000px;
+            perspective:2000px;
+        }
+
+        #flipbook .hard{
+            background:rgb(20, 66, 6) !important;
+            color:white;
+            font-size:20px;
+            -webkit-box-shadow:inset 0 0 5px #666;
+            -moz-box-shadow:inset 0 0 5px #666;
+            -o-box-shadow:inset 0 0 5px #666;
+            -ms-box-shadow:inset 0 0 5px #666;
+            box-shadow:inset 0 0 5px #666;
+            font-weight:bold;
+        }
+
+        #flipbook .odd .gradient {
+            background:-webkit-gradient(linear, right top, left top, color-stop(0.95, #FFF), color-stop(1, #DADADA));
+            background-image:-webkit-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+            background-image:-moz-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+            background-image:-ms-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+            background-image:-o-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+            background-image:linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+            -webkit-box-shadow:inset 0 0 5px #666;
+            -moz-box-shadow:inset 0 0 5px #666;
+            -o-box-shadow:inset 0 0 5px #666;
+            -ms-box-shadow:inset 0 0 5px #666;
+            box-shadow:inset 0 0 5px #666;
+            
+        }
+
+        #flipbook .even .gradient {
+            background:-webkit-gradient(linear, left top, right top, color-stop(0.95, #fff), color-stop(1, #dadada));
+            background-image:-webkit-linear-gradient(left, #fff 95%, #dadada 100%);
+            background-image:-moz-linear-gradient(left, #fff 95%, #dadada 100%);
+            background-image:-ms-linear-gradient(left, #fff 95%, #dadada 100%);
+            background-image:-o-linear-gradient(left, #fff 95%, #dadada 100%);
+            background-image:linear-gradient(left, #fff 95%, #dadada 100%);
+            -webkit-box-shadow:inset 0 0 5px #666;
+            -moz-box-shadow:inset 0 0 5px #666;
+            -o-box-shadow:inset 0 0 5px #666;
+            -ms-box-shadow:inset 0 0 5px #666;
+            box-shadow:inset 0 0 5px #666;
+        }
+
+
+        .keep-breaks{
+            white-space: pre;
+            line-height:25px;
+            padding:0;
+            margin:0;
+        }
+    </style>
+
+</head>
+
+    <body>
+
+        
+			<div id="flipbook">
+				<div class="hard">  The Book of CreativiTea </div>
+                <div class="hard"> </div>
+                <div>Table of Contents</div>
+                <!-- <div>
+                <p>
+                   <b> The Four Seasons Told by Haikus</b><br>
+                    By Ashley Egertson<br>
+                    <br>
+                    fields of sunflowers<br>
+                    I smile in their direction<br>
+                    they seem to smile back<br>
+                    <br>
+                    fallen leaves crunching<br>
+                    as I stomp my way through them<br>
+                    crisply they crumble<br>
+                    <br>
+                    snowflakes swirling down<br>
+                    I capture them on my tongue<br>
+                    they melt on command<br>
+                    <br>
+                    fawns learning to run<br>
+                    I watch them from a distance<br>
+                    stumbling into life<br>
+                </p>
+                </div > -->
+                <!-- <div><div class="keep-breaks"> 
+<b>The Four Seasons Told by Haikus</b>
+By Ashley Egertson
+
+fields of sunflowers
+I smile in their direction
+they seem to smile back
+
+fallen leaves crunching
+as I stomp my way through them
+crisply they crumble
+
+snowflakes swirling down
+I capture them on my tongue
+they melt on command
+
+fawns learning to run
+I watch them from a distance
+stumbling into life
+                    </div>
+                </div> -->
+                <div><img src="images/Ashley.png" style="height: 100%;"></div>
+                <div><div class="keep-breaks"></div></div>
+                <div><div class="keep-breaks"></div></div>
+                <div><div class="keep-breaks"></div></div>
+                <div><div class="keep-breaks"></div></div>
+                <div class="hard"></div>
+            </div>
+            <div class="flip_button_next"><a href="#">Next</a></div>
+            <div class="flip_button_prev"><a href="#">Previous</a></div>
+			<script type="text/javascript">
+				$("#flipbook").turn({
+					width: 900,
+					height: 600,
+					autoCenter: true,
+                    duration: 600,
+                });
+               
+
+              
+               $(".flip_button_next").click(function(){
+                    $("#flipbook").turn("next");
+               });
+              
+               $(".flip_button_prev").click(function(){
+                    $("#flipbook").turn("previous");
+               });
+                
+			</script>
+			
+        
+    </body>
+</html>

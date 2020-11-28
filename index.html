@@ -10,6 +10,97 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://www.turnjs.com/lib/turn.min.js"></script>
+		    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.turnjs.com/lib/turn.min.js"></script>
+    <style type="text/css">
+        /* body{
+            overflow:hidden;
+        }
+
+        *{
+  
+            line-height: 25px;
+        } */
+
+        #flipbook{
+            width:400px;
+            height:300px;
+			float: right;
+			margin-right: 10%;
+			margin-left: 10%;
+			margin-bottom: 5%;
+        }
+
+        #flipbook .page{
+            width:100%;
+            height:50%;
+            background-color:white;
+            line-height:300px;
+            font-size:12px;
+            text-align:center;
+        }
+
+        #flipbook .page-wrapper{
+            -webkit-perspective:2000px;
+            -moz-perspective:2000px;
+            -ms-perspective:2000px;
+            -o-perspective:2000px;
+            perspective:2000px;
+        }
+
+        #flipbook .hard{
+            background:rgb(20, 66, 6) !important;
+            color:white;
+            font-size:20px;
+            -webkit-box-shadow:inset 0 0 5px #666;
+            -moz-box-shadow:inset 0 0 5px #666;
+            -o-box-shadow:inset 0 0 5px #666;
+            -ms-box-shadow:inset 0 0 5px #666;
+            box-shadow:inset 0 0 5px #666;
+            font-weight:bold;
+        }
+
+        #flipbook .odd {
+            background:-webkit-gradient(linear, right top, left top, color-stop(0.95, #FFF), color-stop(1, #DADADA));
+            background-image:-webkit-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+            background-image:-moz-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+            background-image:-ms-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+            background-image:-o-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+            background-image:linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+            -webkit-box-shadow:inset 0 0 5px #666;
+            -moz-box-shadow:inset 0 0 5px #666;
+            -o-box-shadow:inset 0 0 5px #666;
+            -ms-box-shadow:inset 0 0 5px #666;
+            box-shadow:inset 0 0 5px #666;
+            
+        }
+
+        #flipbook .even {
+            background:-webkit-gradient(linear, left top, right top, color-stop(0.95, #fff), color-stop(1, #dadada));
+            background-image:-webkit-linear-gradient(left, #fff 95%, #dadada 100%);
+            background-image:-moz-linear-gradient(left, #fff 95%, #dadada 100%);
+            background-image:-ms-linear-gradient(left, #fff 95%, #dadada 100%);
+            background-image:-o-linear-gradient(left, #fff 95%, #dadada 100%);
+            background-image:linear-gradient(left, #fff 95%, #dadada 100%);
+            -webkit-box-shadow:inset 0 0 5px #666;
+            -moz-box-shadow:inset 0 0 5px #666;
+            -o-box-shadow:inset 0 0 5px #666;
+            -ms-box-shadow:inset 0 0 5px #666;
+            box-shadow:inset 0 0 5px #666;
+        }
+
+
+        .keep-breaks{
+            white-space: pre;
+            line-height:25px;
+            padding:0;
+            margin:0;
+        }
+    </style>
+
+	
 	</head>
 	<body class="is-preload">
 
@@ -24,8 +115,8 @@
 								<header id="header">
 									<!-- <a href="index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a> -->
 									<ul class="icons">
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Website</span></a></li>
+										<li><a href="https://www.instagram.com/vt_creativitea/" class="icon brands fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+										<li><a href="#"  class="icon brands fas fa-donate"><span class="label">Website</span></a></li>
 									</ul>
 								</header>
 
@@ -34,12 +125,12 @@
 									<div class="content">
 										<header>
 											<h1>Welcome<br />
-												to the (online) Book of CreativiTea!</h1>
+												to the Book of CreativiTea!</h1>
 											<p>The Creativitea Anthology </p>
 										</header>
-										<p>CreativiTea is a creative writing student organization at Virginia Tech. It was founded on _________. It is a non-judgemental space for writers to learn from and share their own writings. Due to the Covid-19 pandemic, we are publishing our very first anthology - collection of student works - online. To learn more about CreativiTea and what we do, click the button below!</p>
+										<p>CreativiTea is a creative writing student organization at Virginia Tech. It was founded during Spring 2019. It is a non-judgemental space for writers to learn from and share their own writings. Due to the Covid-19 pandemic, we are publishing our very first anthology - collection of student works - online. To learn more about CreativiTea and what we do, click the button below!</p>
 										<ul class="actions">
-											<li><a href="https://creativiteavt.wixsite.com/blog" target="_blank" class="button big">Learn More</a></li>
+											<li><a href="https://creativiteavt.wixsite.com/blog" target="_blank" class="button big">Click here!</a></li>
 										</ul>
 									</div>
 									<span class="image object">
@@ -48,48 +139,64 @@
 								</section>
 
 							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Erat lacinia</h2>
-									</header>
-									<div class="features">
-										<article>
-											<span class="icon fa-gem"></span>
-											<div class="content">
-												<h3>Portitor ullamcorper</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-paper-plane"></span>
-											<div class="content">
-												<h3>Sapien veroeros</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-rocket"></span>
-											<div class="content">
-												<h3>Quam lorem ipsum</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-signal"></span>
-											<div class="content">
-												<h3>Sed magna finibus</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-									</div>
-								</section>
-
+								
 							<!-- Section -->
 								<section>
 									<header class="major">
-										<h2>Ipsum sed dolor</h2>
+										<h2>Flip through the book!</h2>
 									</header>
-									<div class="posts">
+									<section>
+										<!-- <header class="major">
+											<h2>Erat lacinia</h2>
+										</header> -->
+										<div class="box" style="width: 100%;">
+											<h3>List of Works</h3>
+											<ul class="list-of-works" style="list-style: decimal;">
+												<li><a href="#major" class="1">Egerston, Ashley: The Four Seasons in Haikus</a></li>
+												<li><a href="#major" class="2">Salazar, Rebecca: i see red dots</a></li>
+												<li><a href="#major" class="3">Sommer, Zack: The Flesh of Darkness</a></li>
+												
+											</ul>
+										</div>
+									</section>
+									<div style="display: flex;	justify-content: space-around;">
+									<ul class="pagination">
+										<li><a class="button prev large">Prev</a></li>
+										
+										<!-- <li><a href="#" class="page active">1</a></li>
+										<li><a href="#" class="page">2</a></li>
+										<li><a href="#" class="page">3</a></li>
+										<li><span>&hellip;</span></li>
+										<li><a href="#" class="page">8</a></li>
+										<li><a href="#" class="page">9</a></li>
+										<li><a href="#" class="page">10</a></li> -->
+										<li><a href="#major" class="button next large">Next</a></li>
+									</ul>
+									</div>
+									
+									<div id="flipbook">	
+										<div class="hard">  <img src="images/1.png" style="height: 100%;"> </div>
+										<div class="hard">  <img src="images/2.png" style="height: 100%;"> </div>
+										<div><img src="images/3.png" style="height: 100%;"></div>
+										<div><img src="images/4.png" style="height: 100%;"></div>
+										<div><img src="images/5.png" style="height: 100%;"></div>
+										<div><img src="images/6.png" style="height: 100%;"></div>
+										<div><img src="images/7.png" style="height: 100%;"></div>
+										<div><img src="images/8.png" style="height: 100%;"></div>
+										<div><img src="images/9.png" style="height: 100%;"></div>
+										<div><img src="images/10.png" style="height: 100%;"></div>
+										<div><img src="images/11.png" style="height: 100%;"></div>
+										<div><img src="images/12.png" style="height: 100%;"></div>
+										<div><img src="images/13.png" style="height: 100%;"></div>
+										<div class="hard">  <img src="images/2.png" style="height: 100%;"> </div>
+										<!-- <div class="hard">  <img src="images/2.png" style="height: 100%;"> </div> -->
+									</div>
+									
+	
+									
+									
+									<!-- <div class="posts">
+										
 										<article>
 											<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
 											<h3>Interdum aenean</h3>
@@ -138,7 +245,7 @@
 												<li><a href="#" class="button">More</a></li>
 											</ul>
 										</article>
-									</div>
+									</div> -->
 								</section>
 
 						</div>
@@ -149,11 +256,11 @@
 						<div class="inner">
 
 							<!-- Search -->
-								<section id="search" class="alt">
+								<!-- <section id="search" class="alt">
 									<form method="post" action="#">
 										<input type="text" name="query" id="query" placeholder="Search" />
 									</form>
-								</section>
+								</section> -->
 
 							<!-- Menu -->
 								<nav id="menu">
@@ -191,7 +298,7 @@
 								</nav>
 
 							<!-- Section -->
-								<section>
+								<!-- <section>
 									<header class="major">
 										<h2>Ante interdum</h2>
 									</header>
@@ -212,25 +319,25 @@
 									<ul class="actions">
 										<li><a href="#" class="button">More</a></li>
 									</ul>
-								</section>
+								</section> -->
 
 							<!-- Section -->
 								<section>
 									<header class="major">
 										<h2>Get in touch</h2>
 									</header>
-									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+									<p>Feel free to reach out to us if you spot any errors on the website, if you would like to publish your piece, or if you're just curious!</p>
 									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-										<li class="icon solid fa-phone">(000) 000-0000</li>
-										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-										Nashville, TN 00000-0000</li>
+										<li class="icon solid fa-envelope"><a href="mailto:creativiteavt@gmail.com">creativiteavt@gmail.com</a></li>
+										<!-- <li class="icon solid fa-phone">(000) 000-0000</li> -->
+										<!-- <li class="icon solid fa-home">1234 Somewhere Road #8254<br />
+										Nashville, TN 00000-0000</li> -->
 									</ul>
 								</section>
 
 							<!-- Footer -->
 								<footer id="footer">
-									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+									<p class="copyright">&copy; CreativiTea at Virginia Tech. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 								</footer>
 
 						</div>
@@ -238,12 +345,61 @@
 
 			</div>
 
+			
+
+			<script type="text/javascript">
+				$("#flipbook").turn({
+					width: 900,
+					height: 600,
+					autoCenter: true,
+                    duration: 1000,
+                });
+               
+
+              
+               $(".next").click(function(){
+                    $("#flipbook").turn("next");
+               });
+              
+               $(".prev").click(function(){
+                    $("#flipbook").turn("previous");
+               });
+               $(".1").click(function(){
+                    $("#flipbook").turn("page", 3);
+               });
+               $(".2").click(function(){
+                    $("#flipbook").turn("page", 4);
+               });
+               $(".3").click(function(){
+                    $("#flipbook").turn("page", 6);
+               });
+
+			   	var w = window.innerWidth;
+				// var h = window.innerHeight;	
+			   function changeBook(x) {
+					if (x.matches) { // If media query matches
+						$("#flipbook").turn("size", 100, 200);
+						// $("#flipbook").turn('display', 'single');
+						alert("Entering");
+					} 
+				}
+
+				var x = window.matchMedia("(max-width: 760)")
+				changeBook(x) // Call listener function at run time
+
+                
+			</script>
+ 
+		
+
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
+			<!-- <script src="assets/js/jquery.min.js"></script> -->
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			
+
 
 	</body>
 </html>
