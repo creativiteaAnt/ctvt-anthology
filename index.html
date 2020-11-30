@@ -12,6 +12,10 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script type="text/javascript" src="assets/js/turn.js"></script>
+		<link
+    	rel="stylesheet"
+    	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  		/>
 		
     <style type="text/css">
         /* body{
@@ -114,8 +118,8 @@
 								<header id="header">
 									<!-- <a href="index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a> -->
 									<ul class="icons">
-										<li><a href="https://www.instagram.com/vt_creativitea/" class="icon brands fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
-										<li><a href="#"  class="icon brands fas fa-donate"><span class="label">Website</span></a></li>
+										<li class="flip"><a href="https://www.instagram.com/vt_creativitea/" class="icon brands fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+										<!-- <li><a href="#"  class="icon brands fas fa-donate"><span class="label">Website</span></a></li> -->
 									</ul>
 								</header>
 
@@ -125,11 +129,14 @@
 										<header>
 											<h1>Welcome<br />
 												to the Book of CreativiTea!</h1>
-											<p>The Creativitea Anthology </p>
+											<p style="display: inline-block;"><a href="" class="typewrite" data-period="2000" data-type='[ "The Creativitea Anthology", "It&#39s here and it&#39s awesome.", "Send us your pieces!"]'>
+												<span class="wrap"></span>
+											  </a></p>
+											<br>
 										</header>
 										<p>CreativiTea is a creative writing student organization at Virginia Tech. It was founded during Spring 2019. It is a non-judgemental space for writers to learn from and share their own writings. Due to the Covid-19 pandemic, we are publishing our very first anthology - collection of student works - online. To learn more about CreativiTea and what we do, click the button below!</p>
 										<ul class="actions">
-											<li><a href="https://creativiteavt.wixsite.com/blog" target="_blank" class="button big">Click here!</a></li>
+											<li class="clickhere "><a href="https://creativiteavt.wixsite.com/blog" target="_blank" class="button big">Click here!</a></li>
 										</ul>
 									</div>
 									<span class="image object">
@@ -151,9 +158,13 @@
 										<div class="box" style="width: 100%;">
 											<h3>List of Works</h3>
 											<ul class="list-of-works" style="list-style: decimal;">
-												<li><a style="cursor: pointer;" class="1">Egerston, Ashley: The Four Seasons Told By Haikus</a></li>
-												<li><a style="cursor: pointer;" class="2">Salazar, Rebecca: i see red dots</a></li>
-												<li><a style="cursor: pointer;" class="3">Sommer, Zack: The Flesh of Darkness</a></li>
+												<li><a style="cursor: pointer;" class="1">Betton, Somari: The Effect He Has on Women</a></li>
+												<li><a style="cursor: pointer;" class="5">Egerston, Ashley: The Four Seasons Told By Haikus</a></li>
+												<li><a style="cursor: pointer;" class="2">Hornburg, Drake: __________ </a></li>	
+												<li><a style="cursor: pointer;" class="3">Keeley, Evelyn: __________ </a></li>	
+												<li><a style="cursor: pointer;" class="4">Khan, Zehrin M: He's Just Too Into You</a></li>	
+												<li><a style="cursor: pointer;" class="6">Salazar, Rebecca: i see red dots</a></li>
+												<li><a style="cursor: pointer;" class="7">Sommer, Zack: The Flesh of Darkness</a></li>
 												
 											</ul>
 										</div>
@@ -325,7 +336,7 @@
 									<header class="major">
 										<h2>Get in touch</h2>
 									</header>
-									<p>Feel free to reach out to us if you spot any errors on the website, if you would like to publish your piece, or if you're just curious!</p>
+									<p>Feel free to reach out to us if you spot any errors on the website, if you would like to publish your piece, if you have more ideas, or if you're just curious!</p>
 									<ul class="contact">
 										<li class="icon solid fa-envelope"><a href="mailto:creativiteavt@gmail.com">creativiteavt@gmail.com</a></li>
 										<!-- <li class="icon solid fa-phone">(000) 000-0000</li> -->
@@ -336,7 +347,7 @@
 
 							<!-- Footer -->
 								<footer id="footer">
-									<p class="copyright">&copy; CreativiTea at Virginia Tech. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+									<p class="copyright">&copy; CreativiTea at Virginia Tech. All rights reserved. Images: <a href="https://unsplash.com">Unsplash</a>. Design Template Used: <a href="https://html5up.net">HTML5 UP Editorial</a>.</p>
 								</footer>
 
 						</div>
@@ -348,7 +359,7 @@
 
 			<script type="text/javascript">
 				$("#flipbook").turn({
-					width: 900,
+					width: 925,
 					height: 600,
 					autoCenter: true,
                     duration: 1000,
@@ -386,8 +397,76 @@
 				var x = window.matchMedia("(max-width: 760)")
 				changeBook(x) // Call listener function at run time
 
+				
+				$(".clickhere").hover( function(){
+						$(".clickhere").addClass("animate__animated animate__tada");
+				}, function(){$(".clickhere").removeClass("animate__animated animate__tada");});
+				
+				$(".flip").hover( function(){
+						$(".flip").addClass("animate__animated animate__flip");
+				}, function(){$(".flip").removeClass("animate__animated animate__flip");});
+				
+
+				/*All code below from https://css-tricks.com/snippets/css/typewriter-effect/ */
+				/* Author: Geoff Graham */
+				var TxtType = function(el, toRotate, period) {
+					this.toRotate = toRotate;
+					this.el = el;
+					this.loopNum = 0;
+					this.period = parseInt(period, 10) || 2000;
+					this.txt = '';
+					this.tick();
+					this.isDeleting = false;
+				};
+
+				TxtType.prototype.tick = function() {
+					var i = this.loopNum % this.toRotate.length;
+					var fullTxt = this.toRotate[i];
+
+					if (this.isDeleting) {
+					this.txt = fullTxt.substring(0, this.txt.length - 1);
+					} else {
+					this.txt = fullTxt.substring(0, this.txt.length + 1);
+					}
+
+					this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+					var that = this;
+					var delta = 200 - Math.random() * 100;
+
+					if (this.isDeleting) { delta /= 2; }
+
+					if (!this.isDeleting && this.txt === fullTxt) {
+					delta = this.period;
+					this.isDeleting = true;
+					} else if (this.isDeleting && this.txt === '') {
+					this.isDeleting = false;
+					this.loopNum++;
+					delta = 500;
+					}
+
+					setTimeout(function() {
+					that.tick();
+					}, delta);
+				};
+
+				window.onload = function() {
+					var elements = document.getElementsByClassName('typewrite');
+					for (var i=0; i<elements.length; i++) {
+						var toRotate = elements[i].getAttribute('data-type');
+						var period = elements[i].getAttribute('data-period');
+						if (toRotate) {
+						new TxtType(elements[i], JSON.parse(toRotate), period);
+						}
+					}
+					// INJECT CSS
+					var css = document.createElement("style");
+					css.type = "text/css";
+					css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #3D6257}";
+					document.body.appendChild(css);
+				};
                 
-			</script>
+	</script>
  
 		
 

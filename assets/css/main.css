@@ -2278,3 +2278,19 @@ button,
 .list-of-works a{
   text-decoration: none;
 }
+
+
+.animate__animated.animate__tada {
+  --animate-duration: 2s;
+}
+
+.animate__animated.animate__flip{
+  --animate-duration: 1s;
+}
+
+header a {
+  border-bottom: none;
+}
+
+
+
