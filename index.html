@@ -127,7 +127,7 @@
 								<section id="banner">
 									<div class="content">
 										<header>
-											<h1>Welcome<br />
+											<h1 >Welcome<br />
 												to the Book of CreativiTea!</h1>
 											<p style="display: inline-block;"><a href="" class="typewrite" data-period="2000" data-type='[ "The Creativitea Anthology", "It&#39s here and it&#39s awesome.", "Send us your pieces!"]'>
 												<span class="wrap"></span>
@@ -140,7 +140,7 @@
 										</ul>
 									</div>
 									<span class="image object">
-										<img src="images/ian-schneider-TamMbr4okv4-unsplash.jpg" alt="" />
+										<img src="images/danielle-macinnes-IuLgi9PWETU-unsplash.jpg" alt="" />
 									</span>
 								</section>
 
@@ -159,12 +159,15 @@
 											<h3>List of Works</h3>
 											<ul class="list-of-works" style="list-style: decimal;">
 												<li><a style="cursor: pointer;" class="1">Betton, Somari: The Effect He Has on Women</a></li>
-												<li><a style="cursor: pointer;" class="5">Egerston, Ashley: The Four Seasons Told By Haikus</a></li>
-												<li><a style="cursor: pointer;" class="2">Hornburg, Drake: __________ </a></li>	
-												<li><a style="cursor: pointer;" class="3">Keeley, Evelyn: __________ </a></li>	
-												<li><a style="cursor: pointer;" class="4">Khan, Zehrin M: He's Just Too Into You</a></li>	
-												<li><a style="cursor: pointer;" class="6">Salazar, Rebecca: i see red dots</a></li>
-												<li><a style="cursor: pointer;" class="7">Sommer, Zack: The Flesh of Darkness</a></li>
+												<li><a style="cursor: pointer;" class="2">Egerston, Ashley: The Four Seasons Told By Haikus</a></li>
+												<li><a style="cursor: pointer;" class="3">Goldschneider, Benjamin: Valkyrie - M</a></li>	
+												<li><a style="cursor: pointer;" class="4">Hornburg, Drake: __________ - M</a></li>	
+												<li><a style="cursor: pointer;" class="5">Keeley, Evelyn: The Price of a Secret - M</a></li>	
+												<li><a style="cursor: pointer;" class="6">Khan, Zehrin M: He's Just Too Into You</a></li>	
+												<li><a style="cursor: pointer;" class="7">Salazar, Rebecca: i see red dots</a></li>
+												<li><a style="cursor: pointer;" class="8">Sheets, Stephanie: Ode to my Magic 8-Ball - M</a></li>
+												<li><a style="cursor: pointer;" class="9">Sommer, Zack: The Flesh of Darkness</a></li>
+												<li><a style="cursor: pointer;" class="10">Thackaberry, Taylor: Stardust - M</a></li>
 												
 											</ul>
 										</div>
@@ -397,14 +400,30 @@
 				var x = window.matchMedia("(max-width: 760)")
 				changeBook(x) // Call listener function at run time
 
+				//tada effect
+				// $(".clickhere").hover( function(){
+				// 		$(".clickhere").addClass("animate__animated animate__tada");
+				// }, function(){$(".clickhere").removeClass("animate__animated animate__tada");});
+				
 				
 				$(".clickhere").hover( function(){
-						$(".clickhere").addClass("animate__animated animate__tada");
-				}, function(){$(".clickhere").removeClass("animate__animated animate__tada");});
+						$(".clickhere").addClass("animate__animated animate__rubberBand");
+				}, function(){$(".clickhere").removeClass("animate__animated animate__rubberBand");});
 				
 				$(".flip").hover( function(){
 						$(".flip").addClass("animate__animated animate__flip");
 				}, function(){$(".flip").removeClass("animate__animated animate__flip");});
+				
+				
+				$(".fa-envelope").hover( function(){
+						$(".fa-envelope").addClass("fa-envelope-open");;
+						$(".fa-envelope").removeClass("fa-envelope");
+				}, function(){
+						$(".fa-envelope-open").addClass("fa-envelope");
+						$(".fa-envelope-open").removeClass("fa-envelope-open");
+				});
+				
+				
 				
 
 				/*All code below from https://css-tricks.com/snippets/css/typewriter-effect/ */
