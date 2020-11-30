@@ -2292,5 +2292,14 @@ header a {
   border-bottom: none;
 }
 
+/*From https://thebrandsmen.com/css-image-hover-effects/ */
+.circle img {
+  transition: 1s ease;
+  }
+  
+  .circle img:hover {
+  border-radius:50%;
+  transition: 1s ease;
+  }
 
 
